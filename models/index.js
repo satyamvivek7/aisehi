@@ -5,7 +5,8 @@ dotenv.config();
 // Passing parameters separately (other dialects)
 const sequelize = new Sequelize(process.env.DATABASE, process.env.DBUSERNAME, process.env.DBPASSWORD, {
     host: 'localhost',
-    dialect: 'mysql' 
+    dialect: 'mysql' ,
+    // logging: false
 });
 
 

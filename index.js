@@ -4,7 +4,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 let port =process.env.PORT ||4040;
 import sequelize from './models/index.js';
+import User from './models/user.js';
 
+User.sync({
+    force: true
+});
 
 //Middleware
 app.use(express.urlencoded({extended:true}));
