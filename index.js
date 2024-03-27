@@ -1,14 +1,9 @@
-import express from 'express';
+let express = require('express') ;
 let app = express();
-import dotenv from 'dotenv';
+let dotenv = require('dotenv');
 dotenv.config();
 let port =process.env.PORT ||4040;
-import sequelize from './models/index.js';
-import User from './models/user.js';
-
-User.sync({
-    force: true
-});
+require('./models/index.js');
 
 //Middleware
 app.use(express.urlencoded({extended:true}));
